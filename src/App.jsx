@@ -39,15 +39,15 @@ const App = () => {
 
   return (
     <div className="h-screen w-screen bg-black flex flex-col">
-      <div className="flex-grow flex flex-col items-center">
-        <h1 className="text-4xl font-bold mt-5">ARTISUMM ✨</h1>
-        <h1 className="text-2xl font-semibold text-center mt-5">Welcome to Artisumm an Article Summariser!</h1>
-        <p className="text-center text-lg text-gray-300 w-full max-w-2xl mt-2">
+      <div className="flex-grow flex flex-col items-center px-4 sm:px-0">
+        <h1 className="text-3xl sm:text-4xl font-bold mt-5">ARTISUMM ✨</h1>
+        <h1 className="text-xl sm:text-2xl font-semibold text-center mt-5">Welcome to Artisumm an Article Summariser!</h1>
+        <p className="text-center text-base sm:text-lg text-gray-300 w-full max-w-2xl mt-2">
           To use this application, go below to the input field, enter your article URL, and click the Submit button. 
           Wait for a few seconds, and you will receive a generated summary of your input article!
         </p>
-        <div className="flex items-center justify-center gap-x-2 mt-5">
-          <input className="text-black outline-none border-none rounded-md px-2 py-1 placeholder:text-zinc-500 w-96" onChange={handleInput} type="text" placeholder="Enter the article URL" value={text} />
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-y-2 sm:gap-x-2 mt-5 w-full">
+          <input className="text-black outline-none border-none rounded-md px-2 py-1 placeholder:text-zinc-500 w-full sm:w-96" onChange={handleInput} type="text" placeholder="Enter the article URL" value={text} />
           <button className={`bg-zinc-800 px-4 py-1 rounded-md font-semibold hover:bg-zinc-900 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`} onClick={summarize} disabled={isLoading}>Submit</button>
           <button className="bg-red-600 px-4 py-1 rounded-md font-semibold hover:bg-red-700" onClick={resetFields}>Clear</button>
         </div>
