@@ -40,7 +40,7 @@ const App = () => {
   return (
     <div className="h-screen w-screen bg-black flex flex-col">
       <div className="flex-grow flex flex-col items-center">
-        <h1 className="text-4xl font-bold mt-5">ARTISUMM</h1>
+        <h1 className="text-4xl font-bold mt-5">ARTISUMM ✨</h1>
         <h1 className="text-2xl font-semibold text-center mt-5">Welcome to Artisumm an Article Summariser!</h1>
         <p className="text-center text-lg text-gray-300 w-full max-w-2xl mt-2">
           To use this application, go below to the input field, enter your article URL, and click the Submit button. 
