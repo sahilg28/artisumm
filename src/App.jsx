@@ -22,13 +22,18 @@ const App = () => {
         engine: '2'
       },
       headers: {
-        'x-rapidapi-key': 'f40f01a583msh3a3c136fc31c7d8p1b1ef1jsnc604e901f38f',
+        'x-rapidapi-key': import.meta.env.VITE_API_KEY,
         'x-rapidapi-host': 'article-extractor-and-summarizer.p.rapidapi.com'
       }
     };
-    const response = await axios.request(options);
-    setSummary(response.data.summary);
-    setIsLoading(false);
+    try {
+      const response = await axios.request(options);
+      setSummary(response.data.summary);
+    } catch {
+      setSummary('API connection failed. Please try again in a moment.');
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   const resetFields = () => {
